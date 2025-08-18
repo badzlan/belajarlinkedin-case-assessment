@@ -1,8 +1,8 @@
 import express from "express";
 import cors from "cors";
 import { config } from "dotenv";
-import router from "./routes/route.js";
-import "./database/connection.js";
+import router from "./src/routes/route.js";
+import "./src/config/database.js";
 
 config({ path: ".env" });
 
@@ -16,7 +16,7 @@ app.listen(process.env.APP_PORT, () => {
 });
 
 app.get("/", (req, res) => {
-   res.status(200).send({ msg: "Docs on /api" });
+   res.status(200).send({ message: "Docs on /api" });
 });
 
 app.use("/api", router);

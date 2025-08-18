@@ -1,6 +1,6 @@
 import bcrypt from "bcrypt";
 import User from "../model/User.js";
-import { createToken } from "../helper/createToken.js";
+import { createToken } from "../middleware/Auth.js";
 
 export const register = async (req, res) => {
    const { name, email, password } = req.body;
@@ -19,7 +19,7 @@ export const register = async (req, res) => {
       const hash = await bcrypt.hash(password, salt);
 
       await User.create({ name, email, password: hash });
-      res.status(201).send({ msg: "Register successful!" });
+      res.status(201).send({ message: "Register successful!" });
    } catch (error) {
       res.status(400).json({ error: error.message });
    }
@@ -40,13 +40,13 @@ export const login = async (req, res) => {
       }
 
       const token = createToken(user._id);
-      res.status(200).send({ 
-         email: user.email, 
-         username: user.username, 
-         msg: "Login successful!", 
-         token });
+      res.status(200).send({
+         email: user.email,
+         username: user.username,
+         message: "Login successful!",
+         token,
+      });
    } catch (error) {
       res.status(400).json({ error: error.message });
    }
 };
-
