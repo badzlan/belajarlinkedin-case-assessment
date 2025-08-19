@@ -1,4 +1,4 @@
-import Enrollments from "../model/Enrollment.js";
+import Enrollments from "../models/Enrollment.js";
 
 export const enrollment = async (req, res) => {
    const { id } = req.params;

@@ -1,8 +1,8 @@
 import { Router } from "express";
 import Auth from "../middleware/Auth.js";
-import * as userController from "../controller/userController.js";
-import * as classController from "../controller/classController.js";
-import * as enrollmentController from "../controller/enrollmentController.js";
+import * as userController from "../controllers/userController.js";
+import * as classController from "../controllers/classController.js";
+import * as enrollmentController from "../controllers/enrollmentController.js";
 
 const router = Router();
 
