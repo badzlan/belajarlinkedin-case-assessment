@@ -7,7 +7,7 @@ import * as enrollmentController from "../controller/enrollmentController.js";
 const router = Router();
 
 router.get("/", (req, res) => {
-   res.redirect(process.env.API_DOCS);
+   res.redirect(process.env.API_DOCS || "/");
 });
 
 // User
@@ -16,13 +16,13 @@ router.post("/login", userController.login);
 router.get("/profile", Auth, userController.profile);
 
 // Class
-router.post("/class", Auth, classController.createClass);
-router.get("/class", Auth, classController.getAllClasses);
-router.get("/class/:id", Auth, classController.getOneClass);
-router.put("/class/:id", Auth, classController.updateClass);
-router.delete("/class/:id", Auth, classController.deleteClass);
+router.post("/classes", Auth, classController.createClass);
+router.get("/classes", Auth, classController.getAllClasses);
+router.get("/classes/:id", Auth, classController.getOneClass);
+router.put("/classes/:id", Auth, classController.updateClass);
+router.delete("/classes/:id", Auth, classController.deleteClass);
 
 // Enrollment
-router.post("/enroll/:id", Auth, enrollmentController.enrollment);
+router.post("/enrollments", Auth, enrollmentController.enrollment);
 
 export default router;

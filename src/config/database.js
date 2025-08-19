@@ -1,20 +1,11 @@
-import mongoose from "mongoose"; 
-import { config } from "dotenv";
+import mongoose from "mongoose";
 
-config({ path: ".env" });
-
-mongoose.connect(process.env.DB_URL);
-
-mongoose.connection.on("connected", () => {
-   console.log("✅ Database Connected");
-});
-
-mongoose.connection.on("error", (err) => {
-   console.error("❌ Database connection error:", err);
-});
-
-mongoose.connection.on("disconnected", () => {
-   console.log("⚠️ Database Disconnected");
-});
+mongoose
+   .connect(process.env.DB_URL)
+   .then(() => console.log("✅ Database Connected"))
+   .catch((err) => {
+      console.error("❌ Database connection error:", err);
+      process.exit(1);
+   });
 
 export default mongoose;
