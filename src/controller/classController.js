@@ -1,4 +1,5 @@
 import Class from "../model/Class.js";
+import Enrollment from "../model/Enrollment.js";
 
 export const createClass = async (req, res) => {
    const { name, description, category } = req.body;
@@ -36,7 +37,16 @@ export const getOneClass = async (req, res) => {
 
    try {
       const classes = await Class.findById(id).select("-__v");
-      classes.length === 0 ? res.status(404).json({ error: "Class not found" }) : res.status(200).send({ class: classes });
+      const enrollments = await Enrollment.find({ class_id: id }).populate("user_id", "-password -__v");
+
+      if (!classes) {
+         throw Error("Class not found!");
+      }
+
+      res.status(200).send({
+            class: classes,
+            enrolledUsers: enrollments.map(e => e.user_id),
+         });
    } catch (error) {
       res.status(400).json({ error: error.message });
    }
@@ -56,8 +66,8 @@ export const updateClass = async (req, res) => {
          throw Error("Class not found!");
       }
 
-      await Class.findByIdAndUpdate(id, { name, description, category }, { new: true });
-      res.status(200).send({ message: "Class updated successfully!", class: classes });
+      const classesUpdated = await Class.findByIdAndUpdate(id, { name, description, category }, { new: true });
+      res.status(200).send({ message: "Class updated successfully!", class: classesUpdated });
    } catch (error) {
       res.status(400).json({ error: error.message });
    }

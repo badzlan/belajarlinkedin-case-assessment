@@ -1,5 +1,6 @@
 import bcrypt from "bcrypt";
 import User from "../model/User.js";
+import Enrollment from "../model/Enrollment.js";
 import { createToken } from "../middleware/Auth.js";
 
 export const register = async (req, res) => {
@@ -48,5 +49,23 @@ export const login = async (req, res) => {
       });
    } catch (error) {
       res.status(400).json({ error: error.message });
+   }
+};
+
+export const profile = async (req, res) => {
+   try {
+      const user = await User.findById(req.user._id).select("-password -__v");
+      const enrollments = await Enrollment.find({ user_id: req.user._id }).populate("class_id", "-__v");
+
+      if (!user) {
+         throw Error("User not found!");
+      }
+
+      res.status(200).json({
+         user,
+         enrolledCourses: enrollments.map((enroll) => enroll.class_id),
+      });
+   } catch (error) {
+      res.status(500).json({ error: error.message });
    }
 };

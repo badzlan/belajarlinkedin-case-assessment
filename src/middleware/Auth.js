@@ -3,8 +3,8 @@ import { config } from "dotenv";
 
 config({ path: ".env" });
 
-export const createToken = (email) => {
-   return jwt.sign({ email }, process.env.JWT_SECRET);
+export const createToken = (_id) => {
+   return jwt.sign({ _id }, process.env.JWT_SECRET);
 };
 
 const Auth = async (req, res, next) => {
