@@ -12,14 +12,14 @@ app.use(express.json());
 app.use(cors());
 
 app.get("/", (req, res) => {
-   res.status(200).send({ message: "Docs available at /api" });
+   return res.status(200).send({ message: "Docs available at /api" });
 });
 
 app.use("/api", router);
 
 app.use((err, req, res, next) => {
    console.error(err.stack);
-   res.status(500).json({ error: err.message });
+   return res.status(500).json({ error: err.message });
 });
 
 app.listen(process.env.APP_PORT, () => {
