@@ -23,6 +23,6 @@ router.put("/classes/:id", Auth, classController.updateClass);
 router.delete("/classes/:id", Auth, classController.deleteClass);
 
 // Enrollment
-router.post("/enrollments", Auth, enrollmentController.enrollment);
+router.post("/enroll", Auth, enrollmentController.enrollment);
 
 export default router;
