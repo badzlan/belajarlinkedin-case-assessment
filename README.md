@@ -1,5 +1,8 @@
+<p align="center"><img src="https://www.edureka.co/blog/content/ver.1556540029/uploads/2019/05/nodeMongo-1.png" width="400" alt="Logo"></p>
+
+
 ## Project Overview
-BelajarLinkedin Case Assessment create Learning Management System REST API for User Enroll a Class
+BelajarLinkedin Case Assessment, create Simple REST API for User Enroll a Class
 
 Technology :
 - [Express.js](https://expressjs.com/).
@@ -36,9 +39,6 @@ npm install
 ```
 npm run dev
 ```
-
-## Authors
-- [@badzlan](https://github.com/badzlan)
 
 ---
 
@@ -456,3 +456,8 @@ Response Error (500) :
    "error": "Internal server error"
 }
 ```
+
+---
+
+## Authors
+- [@badzlan](https://github.com/badzlan)
