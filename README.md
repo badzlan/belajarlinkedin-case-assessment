@@ -372,3 +372,43 @@ Response Error (500) :
    "error": "Internal server error"
 }
 ```
+
+### Enroll to Class
+
+Endpoint : `POST /api/enroll`
+
+Headers (Authorization required) :
+
+-  Authorization: Bearer <jwt_token>
+
+Request Body :
+
+```json
+{
+    "class_id": "68a3889ed26dfe49c84b5f8e"
+}
+```
+
+Response Success (201) :
+
+```json
+{
+  "message": "Enrollment successful!"
+}
+```
+
+Response Error (400) :
+
+```json
+{
+  "error": "You are already enrolled in this class!"
+}
+```
+
+Response Error (500) :
+
+```json
+{
+   "error": "Internal server error"
+}
+```
