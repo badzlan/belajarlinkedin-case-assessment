@@ -4,6 +4,8 @@
 
 BelajarLinkedin Case Assessment, create Simple REST API for User Enroll a Class
 
+ERD : https://dbdiagram.io/d/BelajarLinkedin-Case-Assessment-68a5fd81466887cb45de9a03
+
 Technology :
 
 -  [Express.js](https://expressjs.com/).
