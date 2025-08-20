@@ -1,4 +1,48 @@
-# API Documentation
+## Project Overview
+BelajarLinkedin Case Assessment create Learning Management System REST API for User Enroll a Class
+
+Technology :
+- [Express.js](https://expressjs.com/).
+- [MongoDB](https://www.mongodb.com/).
+
+
+## Prerequisite
+- Already install [nodejs](https://nodejs.org/en/download).
+
+## Step by step installation
+#### 1. Clone this repository
+```
+git clone https://github.com/badzlan/belajarlinkedin-case-assessment
+```
+or 
+#### Download the zip file
+<a href="https://github.com/badzlan/belajarlinkedin-case-assessment">![download zip](https://raw.githubusercontent.com/0x1m4o/Industry-Project/refs/heads/main/public/img/image.png)</a>
+
+#### 2. Go to directory 
+```
+cd belajarlinkedin-case-assessment
+```
+
+#### 3. Install dependency with npm
+```
+npm install
+```
+
+#### 4. Copy the content of ```.env.example``` file then create ```.env``` file and paste to ```.env``` file
+
+#### 5. Fill all the content in the ```.env``` file
+
+#### 6. Start the development server
+```
+npm run dev
+```
+
+## Authors
+- [@badzlan](https://github.com/badzlan)
+
+---
+
+## API Documentation
 
 ### User Register
 
