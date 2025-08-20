@@ -76,7 +76,7 @@ export const updateClass = async (req, res) => {
          return res.status(404).json({ error: "Class not found!" });
       }
 
-      const classesUpdated = await Class.findByIdAndUpdate(id, { name, description, category }, { new: true });
+      const classesUpdated = await Class.findByIdAndUpdate(id, { name, description, category }, { new: true }).select("-__v");
       return res.status(200).send({ message: "Class updated successfully!", class: classesUpdated });
    } catch (error) {
       return res.status(500).json({ error: error.message });

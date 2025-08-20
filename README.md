@@ -1,4 +1,4 @@
-## API Documentation
+# API Documentation
 
 ### User Register
 
@@ -97,7 +97,8 @@ Response Error (500) :
 Endpoint : `GET /api/profile`
 
 Headers (Authorization required) :
-Authorization: Bearer <jwt_token>
+
+-  Authorization: Bearer <jwt_token>
 
 Response Success (200) :
 
@@ -120,23 +121,254 @@ Response Success (200) :
 ```
 
 Response Error (401 – no/invalid token) :
+
 ```json
 {
-  "error": "Invalid or expired token"
+   "error": "Invalid or expired token"
 }
 ```
 
 Response Error (404) :
+
 ```json
 {
-  "error": "User not found!"
+   "error": "User not found!"
 }
 ```
 
 Response Error (500) :
+
 ```json
 {
-  "error": "Internal server error"
+   "error": "Internal server error"
 }
 ```
 
+### Create Class
+
+Endpoint : `POST /api/classes`
+
+Headers (Authorization required) :
+
+-  Authorization: Bearer <jwt_token>
+
+Request Body :
+
+```json
+{
+   "name": "Class MySQL",
+   "description": "Arcu morbi torquent suscipit rhoncus lorem.",
+   "category": "database"
+}
+```
+
+Response Success (201) :
+
+```json
+{
+   "message": "Class created successfully!"
+}
+```
+
+Response Error (400) :
+
+```json
+{
+   "error": "All fields are required!"
+}
+```
+
+Response Error (500) :
+
+```json
+{
+   "error": "Internal server error"
+}
+```
+
+### Get All Classes
+
+Endpoint : `GET /api/classes`
+
+Headers (Authorization required) :
+
+-  Authorization: Bearer <jwt_token>
+
+Query Params (optional) :
+
+-  category → filter class berdasarkan kategori.
+
+Response Success (200) :
+
+```json
+{
+   "classes": [
+      {
+         "_id": "68a38891d26dfe49c84b5f8a",
+         "name": "Class Flutter",
+         "description": "Arcu morbi torquent suscipit rhoncus lorem.",
+         "category": "mobile"
+      },
+      {
+         "_id": "68a38898d26dfe49c84b5f8c",
+         "name": "Class Laravel",
+         "description": "Arcu morbi torquent suscipit rhoncus lorem.",
+         "category": "web"
+      }
+   ]
+}
+```
+
+Response Error (404) :
+
+```json
+{
+   "error": "Class not found"
+}
+```
+
+```json
+{
+   "message": "No class found"
+}
+```
+
+Response Error (500) :
+
+```json
+{
+   "error": "Internal server error"
+}
+```
+
+### Get One Class
+
+Endpoint : `GET /api/classes/<:id>`
+
+Headers (Authorization required) :
+
+-  Authorization: Bearer <jwt_token>
+
+Response Success (200) :
+
+```json
+{
+   "class": {
+      "_id": "68a3889ed26dfe49c84b5f8e",
+      "name": "Class AWS",
+      "description": "Arcu morbi torquent suscipit rhoncus lorem.",
+      "category": "cloud"
+   },
+   "enrolledUsers": [
+      {
+         "_id": "68a4345cfe938312e882810b",
+         "name": "admin",
+         "email": "admin@gmail.com"
+      }
+   ]
+}
+```
+
+Response Error (404) :
+
+```json
+{
+   "error": "Class not found!"
+}
+```
+
+Response Error (500) :
+
+```json
+{
+   "error": "Internal server error"
+}
+```
+
+### Update Class
+
+Endpoint : `PUT /api/classes/<:id>`
+
+Headers (Authorization required) :
+
+-  Authorization: Bearer <jwt_token>
+
+Request Body :
+
+```json
+{
+   "name": "Class SQL",
+   "description": "Arcu morbi torquent suscipit rhoncus lorem.",
+   "category": "database"
+}
+```
+
+Response Success (200) :
+
+```json
+{
+   "message": "Class updated successfully!",
+   "class": {
+      "_id": "68a4347efe938312e882810e",
+      "name": "Class SQL",
+      "description": "Arcu morbi torquent suscipit rhoncus lorem. ",
+      "category": "database"
+   }
+}
+```
+
+Response Error (400) :
+
+```json
+{
+   "error": "All fields are required!"
+}
+```
+
+Response Error (404) :
+
+```json
+{
+   "error": "Class not found!"
+}
+```
+
+Response Error (500) :
+
+```json
+{
+   "error": "Internal server error"
+}
+```
+
+### Delete Class
+
+Endpoint : `DELETE /api/classes/<:id>`
+
+Headers (Authorization required) :
+
+-  Authorization: Bearer <jwt_token>
+
+Response Success (200) :
+
+```json
+{
+   "message": "Class deleted successfully!"
+}
+```
+
+Response Error (404) :
+
+```json
+{
+   "error": "Class not found!"
+}
+```
+
+Response Error (500) :
+
+```json
+{
+   "error": "Internal server error"
+}
+```
