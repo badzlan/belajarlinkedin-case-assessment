@@ -1,41 +1,50 @@
 <p align="center"><img src="https://www.edureka.co/blog/content/ver.1556540029/uploads/2019/05/nodeMongo-1.png" width="400" alt="Logo"></p>
 
-
 ## Project Overview
+
 BelajarLinkedin Case Assessment, create Simple REST API for User Enroll a Class
 
 Technology :
-- [Express.js](https://expressjs.com/).
-- [MongoDB](https://www.mongodb.com/).
 
+-  [Express.js](https://expressjs.com/).
+-  [MongoDB](https://www.mongodb.com/).
 
 ## Prerequisite
-- Already install [nodejs](https://nodejs.org/en/download).
+
+-  Already install [nodejs](https://nodejs.org/en/download).
 
 ## Step by step installation
+
 #### 1. Clone this repository
+
 ```
 git clone https://github.com/badzlan/belajarlinkedin-case-assessment
 ```
-or 
+
+or
+
 #### Download the zip file
+
 <a href="https://github.com/badzlan/belajarlinkedin-case-assessment">![download zip](https://raw.githubusercontent.com/0x1m4o/Industry-Project/refs/heads/main/public/img/image.png)</a>
 
-#### 2. Go to directory 
+#### 2. Go to directory
+
 ```
 cd belajarlinkedin-case-assessment
 ```
 
 #### 3. Install dependency with npm
+
 ```
 npm install
 ```
 
-#### 4. Copy the content of ```.env.example``` file then create ```.env``` file and paste to ```.env``` file
+#### 4. Copy the content of `.env.example` file then create `.env` file and paste to `.env` file
 
-#### 5. Fill all the content in the ```.env``` file
+#### 5. Fill all the content in the `.env` file
 
 #### 6. Start the development server
+
 ```
 npm run dev
 ```
@@ -429,7 +438,7 @@ Request Body :
 
 ```json
 {
-    "class_id": "68a3889ed26dfe49c84b5f8e"
+   "class_id": "68a3889ed26dfe49c84b5f8e"
 }
 ```
 
@@ -437,7 +446,7 @@ Response Success (201) :
 
 ```json
 {
-  "message": "Enrollment successful!"
+   "message": "Enrollment successful!"
 }
 ```
 
@@ -445,7 +454,7 @@ Response Error (400) :
 
 ```json
 {
-  "error": "You are already enrolled in this class!"
+   "error": "You are already enrolled in this class!"
 }
 ```
 
@@ -460,4 +469,5 @@ Response Error (500) :
 ---
 
 ## Authors
-- [@badzlan](https://github.com/badzlan)
+
+-  [@badzlan](https://github.com/badzlan)
