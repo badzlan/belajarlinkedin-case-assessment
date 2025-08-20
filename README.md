@@ -1,4 +1,4 @@
-<p align="center"><img src="https://www.edureka.co/blog/content/ver.1556540029/uploads/2019/05/nodeMongo-1.png" width="400" alt="Logo"></p>
+<p align="center"><img src="https://miro.medium.com/v2/resize:fit:1400/1*s5k9aFjIUO5gJibMwuaMdw.png" width="400" alt="Logo"></p>
 
 ## Project Overview
 
